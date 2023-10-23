@@ -1,0 +1,7 @@
+{
+  "name": "agendamentos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
