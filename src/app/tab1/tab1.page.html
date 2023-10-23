@@ -9,19 +9,40 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <!-- <ion-title size="large">Tab 1</ion-title> -->
     </ion-toolbar>
   </ion-header>
 
-
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Agendamentos</ion-card-title>
+      <ion-card-subtitle>Informe os horários desejádos para os serviços selecionados</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <full-calendar [options]="calendarOptions"></full-calendar>
+
+      <agenda></agenda>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+
+      <div class="d-flex">
+        <div class="col-4">
+          <ion-card-title>Unhas - Manicure</ion-card-title>
+          <ion-card-subtitle>Tempo de Execução: 01h</ion-card-subtitle>
+        </div>
+        <div class="col-8 d-flex justify-content-end">
+          <div>
+            <ion-button color="warning">(Escolher Data/Horário)</ion-button>
+          </div>
+        </div>
+      </div>
+      <hr style="border-top: 2px solid rgb(255, 255, 255) !important;"/>
+
     </ion-card-content>
   </ion-card>
 

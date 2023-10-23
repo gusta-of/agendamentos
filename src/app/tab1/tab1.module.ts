@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { AgendamentoComponent } from './agendamento/agendamento.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,9 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     Tab1PageRoutingModule,
     FullCalendarModule
   ],
-  declarations: [Tab1Page]
+  declarations: [
+    Tab1Page,
+    AgendamentoComponent,
+  ]
 })
 export class Tab1PageModule {}
