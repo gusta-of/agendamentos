@@ -23,13 +23,14 @@ export class AgendamentoComponent implements OnInit, AfterContentInit {
   data(events: any[]): Promise<CalendarOptions> {
    return new Promise(resolve => {
       resolve({
+        themeSystem: 'bootstrap5',
         initialView: 'dayGridMonth',
         locale: ['pt'],
         dateClick: this.handleDateClick.bind(this),
         datesSet: this.datesSet.bind(this),
         plugins: [dayGridPlugin, interactionPlugin],
-        showNonCurrentDates: false,
-        contentHeight: 400,
+        // showNonCurrentDates: false,
+        contentHeight: 350,
         events: events,
         buttonText: {
           today: 'Hoje'

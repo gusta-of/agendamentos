@@ -24,3 +24,17 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.fc-theme-standard td, .fc-theme-standard th {
+  border: none !important;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none !important;
+}
+tr  {
+  td>.fc-day.fc-day-mon.fc-day-today.fc-daygrid-day {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}
