@@ -26,7 +26,6 @@ export class Tab1Page implements OnInit {
       plugins: [dayGridPlugin, interactionPlugin],
       showNonCurrentDates: false,
       contentHeight: 300,
-      hiddenDays: [20, 21],
       events: [
         {
           start: '2023-10-24',
@@ -42,10 +41,10 @@ export class Tab1Page implements OnInit {
   }
 
   handleDateClick(arg: any) {
-    alert('date click! ' + arg.dateStr)
+    console.log(`date click! ${arg.date} ISOdate: ${arg.date.toISOString()}`)
   }
 
   drop(args: any) {
-    alert(`Month: ${args.start.getMonth() + 1}`);
+    console.log(`Month: ${args.start.getMonth() + 1}`);
   }
 }
