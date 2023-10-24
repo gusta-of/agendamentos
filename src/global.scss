@@ -25,16 +25,97 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-.fc-theme-standard td, .fc-theme-standard th {
-  border: none !important;
+
+:root {
+  --fc-border-color: none;
+  --fc-daygrid-event-dot-width: 5px;
+
+  .fc-daygrid-day-top > a {
+    text-decoration: none;
+    color: var(--ion-color-step-850);
+  }
+
+  .fc-day-past,
+  .fc-day-future,
+  .fc-day-today {
+    height: 30px !important;
+    padding: 5px;
+  }
+
+  .fc-daygrid-day > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: solid 1px rgba($color: #000000, $alpha: .3);
+    padding: 5px;
+  }
+
+  .fc-event {
+    border-radius: 11px;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+  }
+
+  .fc
+  .fc-button {
+    background: var(--ion-color-primary);
+    border: none !important;
+    border-color: none !important;
+    box-shadow: none !important;
+    :hover {
+      background: var(--ion-color-primary);
+    }
+  }
+
+  .fc-col-header-cell-cushion {
+    text-decoration: none;
+    color: var(--ion-color-step-850);
+  }
+
+  .fc-day-today {
+    background-color: var(--ion-color-medium-shade) !important;
+    border-radius: 12px;
+    margin: 2px;
+    color: #fff;
+
+  }
+  
+  .fc-day-today > * {
+    padding: 5px;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
 }
 
-.fc-theme-standard .fc-scrollgrid {
-  border: none !important;
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
-tr  {
-  td>.fc-day.fc-day-mon.fc-day-today.fc-daygrid-day {
-    height: 30px !important;
-    width: 30px !important;
-  }
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
 }

@@ -11,38 +11,41 @@ import interactionPlugin from '@fullcalendar/interaction';
 })
 export class AgendamentoComponent implements OnInit, AfterContentInit {
 
-  calendarOptions: Promise<CalendarOptions>;
-  constructor() {
-    setTimeout(() => {
-      this.calendarOptions = this.data([]);
-    });
-  }
+  calendarOptions: CalendarOptions;
+  constructor() { this.calendarOptions = this.data([]); }
   ngOnInit(): void {}
-  ngAfterContentInit(): void {}
+  ngAfterContentInit(): void {  }
 
-  data(events: any[]): Promise<CalendarOptions> {
-   return new Promise(resolve => {
-      resolve({
-        themeSystem: 'bootstrap5',
-        initialView: 'dayGridMonth',
-        locale: ['pt'],
-        dateClick: this.handleDateClick.bind(this),
-        datesSet: this.datesSet.bind(this),
-        plugins: [dayGridPlugin, interactionPlugin],
-        // showNonCurrentDates: false,
-        contentHeight: 350,
-        events: events,
-        buttonText: {
-          today: 'Hoje'
-        }
-      });
-    });
+  update(events: any) {
+    this.calendarOptions = {...this.data(events)};
+  }
+
+  data(events: any[]): CalendarOptions {
+   return {
+      themeSystem: 'bootstrap5',
+      initialView: 'dayGridMonth',
+      locale: ['pt'],
+      dateClick: this.handleDateClick.bind(this),
+      datesSet: this.datesSet.bind(this),
+      plugins: [dayGridPlugin, interactionPlugin],
+      headerToolbar: {
+        left: 'prev',
+        center: 'title,today',
+        right: 'next',
+      },
+      buttonText: {
+        today: "hoje"
+      },
+      // showNonCurrentDates: false,
+      contentHeight: 350,
+      events: events,
+      timeZone: 'local',
+    };
   }
 
   handleDateClick(arg: any) {
-
     console.log(`date click! ${arg.date} ISOdate: ${arg.date.toISOString()}`)
-    this.calendarOptions = this.data([{
+    this.update([{
         start: arg.date.toLocaleDateString().split("/").reverse().join("-"),
         end: arg.date.toLocaleDateString().split("/").reverse().join("-"),
         display: 'background',
